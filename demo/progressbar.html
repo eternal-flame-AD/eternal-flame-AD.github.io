@@ -1,0 +1,33 @@
+<head>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="progressbar.js"></script>
+</head>
+
+<body>
+	<h1>Classical Progressbar Demo</h1>
+	<table>
+		<tr>
+			<td>PHP:</td>
+			<td>
+				<div class="classical-progressbar-1" id="php" progress="0.5" len=27 refresh=500></div>
+			</td>
+		</tr>
+		<tr>
+			<td>Java:</td>
+			<td>
+				<div class="classical-progressbar-2" id="java" progress="0.40" len=27></div>
+			</td>
+		</tr>
+	</table>
+	<script>
+		var java_progress = 0.1;
+		var javaP = $("#java");
+		setInterval((function learnJava() {
+			javaP.attr("progress", java_progress);
+			java_progress += 0.05;
+			if(java_progress > 1) {
+				java_progress -= 1;
+			}
+		}), 1000);
+	</script>
+</body>
